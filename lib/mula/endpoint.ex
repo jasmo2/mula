@@ -1,7 +1,7 @@
 defmodule Mula.Endpoint do
   use Phoenix.Endpoint, otp_app: :mula
 
-  socket "/socket", Mula.UserSocket
+  socket "/socket", Mula.EmployeeSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
