@@ -6,6 +6,7 @@ defmodule Mula.CompanyTest do
   @valid_attrs %{
     description: "some content",
     email: "some content",
+    encrypted_password: "some content",
     enabled: true,
     name: "some content",
     slug: "some content"

@@ -5,6 +5,7 @@ defmodule Mula.Company do
     field :name, :string
     field :slug, :string
     field :email, :string
+    field :encrypted_password, :string
     field :description, :string
     field :enabled, :boolean, default: true
 
