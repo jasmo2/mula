@@ -19,6 +19,10 @@ config :mula, Mula.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configure guardian
+config :guardian, Guardian,
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
