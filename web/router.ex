@@ -13,10 +13,6 @@ defmodule Mula.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/api", Mula do
     pipe_through :api
 
