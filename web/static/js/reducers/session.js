@@ -1,7 +1,7 @@
 import Constants from '../constants';
 
 const initialState = {
-  currentUser: null,
+  currentEmployee: null,
   socket: null,
   channel: null,
   error: null,
@@ -9,10 +9,10 @@ const initialState = {
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case Constants.CURRENT_USER:
-      return { ...state, currentUser: action.currentUser, socket: action.socket, channel: action.channel, error: null };
+    case Constants.CURRENT_EMPLOYEE:
+      return { ...state, currentEmployee: action.currentEmployee, socket: action.socket, channel: action.channel, error: null };
 
-    case Constants.USER_SIGNED_OUT:
+    case Constants.EMPLOYEE_SIGNED_OUT:
       return initialState;
 
     case Constants.SESSIONS_ERROR:

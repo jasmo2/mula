@@ -1,10 +1,10 @@
 import Constants  from '../constants';
 
 const initialState = {
-  connectedUsers: [],
+  connectedEmployees: [],
   channel: null,
   showForm: false,
-  showUsersForm: false,
+  showEmployeesForm: false,
   editingListId: null,
   addingNewCardInListId: null,
   error: null,
@@ -21,8 +21,8 @@ export default function reducer(state = initialState, action = {}) {
     case Constants.BOARDS_SET_CURRENT_BOARD:
       return { ...state, editingListId: null, fetching: false, ...action.board };
 
-    case Constants.CURRENT_BOARD_CONNECTED_USERS:
-      return { ...state, connectedUsers: action.users };
+    case Constants.CURRENT_BOARD_CONNECTED_EMPLOYEES:
+      return { ...state, connectedEmployees: action.employees };
 
     case Constants.CURRENT_BOARD_CONNECTED_TO_CHANNEL:
       return { ...state, channel: action.channel };
@@ -31,7 +31,7 @@ export default function reducer(state = initialState, action = {}) {
       return { ...state, showForm: action.show };
 
     case Constants.CURRENT_BOARD_SHOW_MEMBERS_FORM:
-      return { ...state, showUsersForm: action.show, error: false };
+      return { ...state, showEmployeesForm: action.show, error: false };
 
     case Constants.CURRENT_BOARD_RESET:
       return initialState;
@@ -53,9 +53,9 @@ export default function reducer(state = initialState, action = {}) {
 
     case Constants.CURRENT_BOARD_MEMBER_ADDED:
       const { members } = state;
-      members.push(action.user);
+      members.push(action.employee);
 
-      return { ...state, members: members, showUsersForm: false };
+      return { ...state, members: members, showEmployeesForm: false };
 
     case Constants.CURRENT_BOARD_ADD_MEMBER_ERROR:
       return { ...state, error: action.error };
