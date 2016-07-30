@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(Mula.Repo, :manual)
-
+Mix.Task.run "ecto.create", ~w(-r Rumbl.Repo --quiet)
+Mix.Task.run "ecto.migrate", ~w(-r Rumbl.Repo --quiet)

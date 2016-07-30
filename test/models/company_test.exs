@@ -1,21 +1,26 @@
 defmodule Mula.CompanyTest do
   use Mula.ModelCase
-
   alias Mula.Company
 
   @valid_attrs %{
-    description: "some content",
-    email: "some content",
-    encrypted_password: "some content",
+    description: "a big description on my testing company",
+    email: "company@company.company",
+    password: "12345678",
     enabled: true,
     name: "some content",
     slug: "some content"
   }
 
-  @invalid_attrs %{}
+  @invalid_attrs %{
+    password: "",
+    email: "",
+    name: ""
+  }
 
   test "changeset with valid attributes" do
-    changeset = Company.changeset(%Company{}, @valid_attrs)
+    v_attrs = @valid_attrs
+    changeset = Company.changeset(%Company{}, v_attrs)
+    # IO.inspect "/n #{changeset}"
     assert changeset.valid?
   end
 
