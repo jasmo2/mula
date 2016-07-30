@@ -1,6 +1,6 @@
-defmodule Mula.Company do
+  defmodule Mula.Company do
   use Mula.Web, :model
-
+  
   schema "companies" do
     field :name, :string
     field :slug, :string
@@ -20,9 +20,9 @@ defmodule Mula.Company do
   # @required_fields ~w(name enabled email password)
   # @optional_fields ~w(slug description encrypted_password)
 
-  def changeset(struct, params \\ %{}) do
-    struct
-    |> cast(params, [:name, :url, :email, :description, :enabled])
+  def changeset(company, params \\ %{}) do
+    company
+    |> cast(params, [:name, :slug, :email,:password, :description, :enabled])
     |> validate_required([:name, :email, :enabled, :password])
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)

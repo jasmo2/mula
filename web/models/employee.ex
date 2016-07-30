@@ -22,7 +22,7 @@ defmodule Mula.Employee do
 
   def changeset(employee, params \\ %{}) do
     employee
-    |> cast(params, [:name, :last_name, :email, :encrypted_password, :enable])
+    |> cast(params, [:name, :last_name, :email, :password, :enable])
     |> validate_required([:name, :last_name, :email, :password, :enable])
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)
