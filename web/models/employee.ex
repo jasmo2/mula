@@ -1,6 +1,7 @@
 defmodule Mula.Employee do
   use Mula.Web, :model
 
+  @derive {Poison.Encoder, only: [:id, :name, :last_name, :email]}
   schema "employees" do
     field :name, :string
     field :last_name, :string

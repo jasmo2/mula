@@ -1,6 +1,7 @@
-  defmodule Mula.Company do
+defmodule Mula.Company do
   use Mula.Web, :model
-  
+
+  @derive {Poison.Encoder, only: [:id, :name, :email, :enabled]}
   schema "companies" do
     field :name, :string
     field :slug, :string
